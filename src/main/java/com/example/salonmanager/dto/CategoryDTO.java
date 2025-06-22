@@ -1,6 +1,6 @@
 package com.example.salonmanager.dto;
 
-import com.example.projectschedulehaircutserver.entity.Category;
+import com.example.salonmanager.entity.Category;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

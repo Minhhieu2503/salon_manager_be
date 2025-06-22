@@ -1,0 +1,110 @@
+version: '3.8'
+
+services:
+  # Main Application
+  app:
+    build: .
+    container_name: salon-manager-be
+    ports:
+      - "9090:9090"
+    environment:
+      - DB_URL=jdbc:mysql://db:3306/salon_manager?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+      - DB_USERNAME=root
+      - DB_PASSWORD=salon_password
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - JWT_SECRET_KEY=salon-manager-secret-key-2024
+      - MAIL_USERNAME=your-email@gmail.com
+      - MAIL_PASSWORD=your-app-password
+      - VNPAY_SECRET=your-vnpay-secret
+      - VNPAY_TMNCODE=your-vnpay-tmncode
+      - ZALOPAY_APP_ID=your-zalopay-app-id
+      - ZALOPAY_KEY1=your-zalopay-key1
+      - ZALOPAY_KEY2=your-zalopay-key2
+      - GOOGLE_CLOUD_PROJECT_ID=your-google-cloud-project-id
+      - GOOGLE_AI_API_KEY=your-google-ai-api-key
+      - CLOUDINARY_CLOUD_NAME=your-cloudinary-cloud-name
+      - CLOUDINARY_API_KEY=your-cloudinary-api-key
+      - CLOUDINARY_API_SECRET=your-cloudinary-api-secret
+    depends_on:
+      - db
+      - redis
+    networks:
+      - salon-network
+    restart: unless-stopped
+    volumes:
+      - ./logs:/app/logs
+      - ./uploads:/app/uploads
+
+  # MySQL Database
+  db:
+    image: mysql:8.0
+    container_name: salon-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: salon_password
+      MYSQL_DATABASE: salon_manager
+      MYSQL_USER: salon_user
+      MYSQL_PASSWORD: salon_user_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - salon-network
+    restart: unless-stopped
+    command: --default-authentication-plugin=mysql_native_password
+
+  # Redis Cache
+  redis:
+    image: redis:6.0-alpine
+    container_name: salon-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - salon-network
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+
+  # phpMyAdmin (Optional - for database management)
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: salon-phpmyadmin
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: salon_password
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    networks:
+      - salon-network
+    restart: unless-stopped
+
+  # Redis Commander (Optional - for Redis management)
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    container_name: salon-redis-commander
+    environment:
+      - REDIS_HOSTS=local:redis:6379
+    ports:
+      - "8081:8081"
+    depends_on:
+      - redis
+    networks:
+      - salon-network
+    restart: unless-stopped
+
+volumes:
+  mysql_data:
+    driver: local
+  redis_data:
+    driver: local
+
+networks:
+  salon-network:
+    driver: bridge 

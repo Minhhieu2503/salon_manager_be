@@ -21,6 +21,11 @@ public class LogoutController {
     private final JwtService jwtService;
     private final CookieUtil cookieUtil;
 
+    public LogoutController(JwtService jwtService, CookieUtil cookieUtil) {
+        this.jwtService = jwtService;
+        this.cookieUtil = cookieUtil;
+    }
+
     @GetMapping("/logout")
     public ResponseEntity<?> logout(HttpServletRequest request, HttpServletResponse response) throws LogoutException {
         String refreshToken = getRefreshTokenFromCookies(request);

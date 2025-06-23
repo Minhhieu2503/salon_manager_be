@@ -1,9 +1,9 @@
 package com.example.salonmanager.controller;
 
-import com.example.projectschedulehaircutserver.request.LoginRequest;
-import com.example.projectschedulehaircutserver.response.AuthenticationResponse;
-import com.example.projectschedulehaircutserver.service.authentication.AuthenticationService;
-import com.example.projectschedulehaircutserver.utils.CookieUtil;
+import com.example.salonmanager.request.LoginRequest;
+import com.example.salonmanager.response.AuthenticationResponse;
+import com.example.salonmanager.service.authentication.AuthenticationService;
+import com.example.salonmanager.utils.CookieUtil;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

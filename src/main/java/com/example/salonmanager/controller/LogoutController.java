@@ -1,8 +1,8 @@
 package com.example.salonmanager.controller;
 
-import com.example.projectschedulehaircutserver.exeption.LogoutException;
-import com.example.projectschedulehaircutserver.service.jwt.JwtService;
-import com.example.projectschedulehaircutserver.utils.CookieUtil;
+import com.example.salonmanager.exception.LogoutException;
+import com.example.salonmanager.service.jwt.JwtService;
+import com.example.salonmanager.utils.CookieUtil;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

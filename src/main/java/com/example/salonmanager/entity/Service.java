@@ -1,4 +1,4 @@
-package com.example.salonmanager.entity;
+package com.example.projectschedulehaircutserver.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

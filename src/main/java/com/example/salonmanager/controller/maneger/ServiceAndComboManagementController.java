@@ -1,9 +1,7 @@
-package com.example.projectschedulehaircutserver.controller.maneger;
+package com.example.salonmanager.controller.maneger;
 
-import com.example.projectschedulehaircutserver.exeption.CustomerException;
-import com.example.projectschedulehaircutserver.service.combo.ComboService;
-import com.example.projectschedulehaircutserver.service.customer.CustomerService;
-import com.example.projectschedulehaircutserver.service.service.ProductService;
+import com.example.salonmanager.service.combo.ComboService;
+import com.example.salonmanager.service.service.ProductService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

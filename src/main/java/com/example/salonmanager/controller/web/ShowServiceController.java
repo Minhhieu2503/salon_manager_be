@@ -1,9 +1,9 @@
-package com.example.projectschedulehaircutserver.controller.web;
+package com.example.salonmanager.controller.web;
 
-import com.example.projectschedulehaircutserver.dto.ComboDTO;
-import com.example.projectschedulehaircutserver.dto.ServiceDTO;
-import com.example.projectschedulehaircutserver.response.ShowAllServiceByComboIdResponse;
-import com.example.projectschedulehaircutserver.service.service.ProductService;
+import com.example.salonmanager.dto.ComboDTO;
+import com.example.salonmanager.dto.ServiceDTO;
+import com.example.salonmanager.response.ShowAllServiceByComboIdResponse;
+import com.example.salonmanager.service.service.ProductService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

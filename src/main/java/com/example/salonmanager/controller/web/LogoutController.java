@@ -1,4 +1,4 @@
-package com.example.salonmanager.controller;
+package com.example.salonmanager.controller.web;
 
 import com.example.salonmanager.exception.LogoutException;
 import com.example.salonmanager.service.jwt.JwtService;

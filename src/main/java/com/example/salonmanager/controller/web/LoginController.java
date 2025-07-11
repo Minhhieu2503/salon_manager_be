@@ -1,4 +1,4 @@
-package com.example.salonmanager.controller;
+package com.example.salonmanager.controller.web;
 
 import com.example.salonmanager.request.LoginRequest;
 import com.example.salonmanager.response.AuthenticationResponse;

@@ -26,4 +26,3 @@ public interface WhiteListRepo extends JpaRepository<WhiteList, Long> {
     @Modifying
     @Query("DELETE FROM WhiteList w WHERE w.expirationToken < :cutoffDate")
     void deleteByExpirationTokenBefore(@Param("cutoffDate") LocalDateTime cutoffDate);
-}

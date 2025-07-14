@@ -216,4 +216,41 @@ public class EmailService {
                 "</body>" +
                 "</html>";
     }
+
+    @Async
+    public void sendVerificationEmail(String toEmail, String customerName, String verificationCode) {
+        String subject = "Mã xác thực tài khoản";
+        String body = "<!DOCTYPE html>" +
+                "<html>" +
+                "<head>" +
+                "<style>" +
+                "  body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; }" +
+                "  .container { max-width: 600px; margin: 0 auto; padding: 20px; }" +
+                "  .header { background-color: #4285F4; color: white; padding: 15px; text-align: center; }" +
+                "  .content { padding: 20px; background-color: #f9f9f9; }" +
+                "  .code { font-size: 24px; font-weight: bold; color: #4285F4; text-align: center; margin: 20px 0; }" +
+                "  .footer { margin-top: 20px; font-size: 0.8em; color: #777; text-align: center; }" +
+                "  .note { color: #d32f2f; font-style: italic; }" +
+                "</style>" +
+                "</head>" +
+                "<body>" +
+                "<div class='container'>" +
+                "<div class='header'>" +
+                "<h2>XÁC THỰC TÀI KHOẢN</h2>" +
+                "</div>" +
+                "<div class='content'>" +
+                "<p>Xin chào <strong>" + customerName + "</strong>,</p>" +
+                "<p>Cảm ơn bạn đã đăng ký tài khoản. Vui lòng sử dụng mã xác thực sau để kích hoạt tài khoản:</p>" +
+                "<div class='code'>" + verificationCode + "</div>" +
+                "<p class='note'>Mã có hiệu lực trong 24 giờ. Không chia sẻ mã này với bất kỳ ai.</p>" +
+                "<p>Nếu bạn không yêu cầu tạo tài khoản, vui lòng bỏ qua email này.</p>" +
+                "</div>" +
+                "<div class='footer'>" +
+                "<p>Đây là email tự động. Vui lòng không trả lời.</p>" +
+                "</div>" +
+                "</div>" +
+                "</body>" +
+                "</html>";
+        send(toEmail, subject, body);
+    }
 }

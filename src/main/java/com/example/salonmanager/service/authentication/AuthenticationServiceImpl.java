@@ -4,7 +4,7 @@ import com.example.salonmanager.entity.Account;
 import com.example.salonmanager.entity.Cart;
 import com.example.salonmanager.entity.Customer;
 import com.example.salonmanager.entity.Role;
-import com.example.salonmanager.exeption.*;
+import com.example.salonmanager.exception.*;
 import com.example.salonmanager.repository.*;
 import com.example.salonmanager.request.LoginRequest;
 import com.example.salonmanager.request.RefreshTokenRequest;

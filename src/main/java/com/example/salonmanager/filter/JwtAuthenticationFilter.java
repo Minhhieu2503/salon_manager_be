@@ -1,6 +1,6 @@
 package com.example.salonmanager.filter;
 
-import com.example.salonmanager.exeption.AuthenticationException;
+import com.example.salonmanager.exception.AuthenticationException;
 import com.example.salonmanager.service.jwt.JwtService;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.MalformedJwtException;

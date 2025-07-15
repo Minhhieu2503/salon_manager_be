@@ -1,8 +1,8 @@
 package com.example.salonmanager.service.authentication;
 
-import com.example.salonmanager.exeption.CustomerException;
-import com.example.salonmanager.exeption.RefreshTokenException;
-import com.example.salonmanager.exeption.RegisterException;
+import com.example.salonmanager.exception.CustomerException;
+import com.example.salonmanager.exception.RefreshTokenException;
+import com.example.salonmanager.exception.RegisterException;
 import com.example.salonmanager.request.LoginRequest;
 import com.example.salonmanager.request.RefreshTokenRequest;
 import com.example.salonmanager.request.RegisterRequest;

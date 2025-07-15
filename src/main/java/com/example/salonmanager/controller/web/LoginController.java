@@ -17,6 +17,11 @@ public class LoginController {
     private final AuthenticationService authenticationService;
     private final CookieUtil cookieUtil;
 
+    public LoginController(AuthenticationService authenticationService, CookieUtil cookieUtil) {
+        this.authenticationService = authenticationService;
+        this.cookieUtil = cookieUtil;
+    }
+
     @PostMapping("/login")
     public ResponseEntity<?> authenticate(@RequestBody LoginRequest userLoginRequest, HttpServletResponse response)  {
         AuthenticationResponse authResponse = authenticationService.authenticate(userLoginRequest);

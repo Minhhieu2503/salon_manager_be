@@ -27,6 +27,11 @@ public class SecurityConfig {
     private final AuthenticationProvider provider;
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
 
+    public SecurityConfig(AuthenticationProvider provider, JwtAuthenticationFilter jwtAuthenticationFilter) {
+        this.provider = provider;
+        this.jwtAuthenticationFilter = jwtAuthenticationFilter;
+    }
+
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();

@@ -23,6 +23,11 @@ public class RefreshTokenController {
     private final AuthenticationService authenticationService;
     private final CookieUtil cookieUtil;
 
+    public RefreshTokenController(AuthenticationService authenticationService, CookieUtil cookieUtil) {
+        this.authenticationService = authenticationService;
+        this.cookieUtil = cookieUtil;
+    }
+
     @GetMapping("/refresh-token")
     public ResponseEntity<?> refreshToken(HttpServletRequest servletRequest, HttpServletResponse response) throws RefreshTokenException {
         String refreshToken = extractRefreshTokenFromCookies(servletRequest.getCookies());

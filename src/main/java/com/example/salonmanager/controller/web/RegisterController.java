@@ -1,6 +1,6 @@
 package com.example.salonmanager.controller.web;
 
-import com.example.salonmanager.exeption.RegisterException;
+import com.example.salonmanager.exception.RegisterException;
 import com.example.salonmanager.request.RegisterRequest;
 import com.example.salonmanager.service.authentication.AuthenticationService;
 import lombok.AllArgsConstructor;

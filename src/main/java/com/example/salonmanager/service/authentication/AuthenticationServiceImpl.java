@@ -48,6 +48,21 @@ public class AuthenticationServiceImpl implements AuthenticationService{
     private final RedisService redisService;
     private final EmailService emailService;
 
+    public AuthenticationServiceImpl(CustomerRepo customerRepo, CartRepo cartRepo, PasswordEncoder encoder, RoleRepo roleRepo, AccountRepo accountRepo, EmployeeRepo employeeRepo, ManagerRepo managerRepo, JwtService jwtService, AuthenticationManager authenticationManager, UserDetailsService userDetailsService, RedisService redisService, EmailService emailService) {
+        this.customerRepo = customerRepo;
+        this.cartRepo = cartRepo;
+        this.encoder = encoder;
+        this.roleRepo = roleRepo;
+        this.accountRepo = accountRepo;
+        this.employeeRepo = employeeRepo;
+        this.managerRepo = managerRepo;
+        this.jwtService = jwtService;
+        this.authenticationManager = authenticationManager;
+        this.userDetailsService = userDetailsService;
+        this.redisService = redisService;
+        this.emailService = emailService;
+    }
+
     // đăng ký dành cho khách hàng
     @Override
     @Transactional

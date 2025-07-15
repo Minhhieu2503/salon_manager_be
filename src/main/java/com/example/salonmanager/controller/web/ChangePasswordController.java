@@ -18,6 +18,10 @@ public class ChangePasswordController {
 
     private final AuthenticationService authenticationService;
 
+    public ChangePasswordController(AuthenticationService authenticationService) {
+        this.authenticationService = authenticationService;
+    }
+
     @PostMapping("/request-otp")
     public ResponseEntity<String> requestChangePassword(@RequestBody OTPRequest request) throws CustomerException {
         String result = authenticationService.requestChangePassword(request.getEmail());

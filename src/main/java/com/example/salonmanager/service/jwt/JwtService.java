@@ -39,6 +39,12 @@ public class JwtService {
     private final WhiteListRepo whiteListRepo;
     private final UserDetailsService userDetailsService;
 
+    public JwtService(BlackListRepo blackListRepo, WhiteListRepo whiteListRepo, UserDetailsService userDetailsService) {
+        this.blackListRepo = blackListRepo;
+        this.whiteListRepo = whiteListRepo;
+        this.userDetailsService = userDetailsService;
+    }
+
     // Lấy ra key từ secretKey
     private Key getSignKey() {
         byte[] keyBytes = Decoders.BASE64.decode(secretKey);

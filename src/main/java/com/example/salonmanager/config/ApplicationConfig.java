@@ -30,6 +30,13 @@ public class ApplicationConfig {
     private final AccountRepo accountRepo;
     private final ManagerRepo managerRepo;
 
+    public ApplicationConfig(CustomerRepo customerRepo, EmployeeRepo employeeRepo, AccountRepo accountRepo, ManagerRepo managerRepo) {
+        this.customerRepo = customerRepo;
+        this.employeeRepo = employeeRepo;
+        this.accountRepo = accountRepo;
+        this.managerRepo = managerRepo;
+    }
+
     @Bean
     public UserDetailsService userDetailsService() {
         return username -> {

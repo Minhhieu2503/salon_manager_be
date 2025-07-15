@@ -1,13 +1,13 @@
 package com.example.salonmanager.service.workdone;
 
 import com.example.salonmanager.service.workdone.WorkDoneService;
-import com.example.projectschedulehaircutserver.entity.Employee;
-import com.example.projectschedulehaircutserver.entity.Orders;
-import com.example.projectschedulehaircutserver.entity.WorkDone;
-import com.example.projectschedulehaircutserver.exeption.LoginException;
-import com.example.projectschedulehaircutserver.repository.OrderRepo;
-import com.example.projectschedulehaircutserver.repository.WorkDoneRepo;
-import com.example.projectschedulehaircutserver.request.AddWorkDoneInOrderRequest;
+import com.example.salonmanager.entity.Employee;
+import com.example.salonmanager.entity.Orders;
+import com.example.salonmanager.entity.WorkDone;
+import com.example.salonmanager.exeption.LoginException;
+import com.example.salonmanager.repository.OrderRepo;
+import com.example.salonmanager.repository.WorkDoneRepo;
+import com.example.salonmanager.request.AddWorkDoneInOrderRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;

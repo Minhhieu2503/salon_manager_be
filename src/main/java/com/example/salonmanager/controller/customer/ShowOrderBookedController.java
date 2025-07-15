@@ -1,6 +1,6 @@
-package com.example.projectschedulehaircutserver.controller.customer;
+package com.example.salonmanager.controller.customer;
 
-import com.example.projectschedulehaircutserver.service.order.OrderService;
+import com.example.salonmanager.service.order.OrderService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

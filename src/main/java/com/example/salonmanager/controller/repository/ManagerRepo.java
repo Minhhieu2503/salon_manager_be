@@ -1,6 +1,6 @@
-package com.example.projectschedulehaircutserver.repository;
+package com.example.salonmanager.repository;
 
-import com.example.projectschedulehaircutserver.entity.Manager;
+import com.example.salonmanager.entity.Manager;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

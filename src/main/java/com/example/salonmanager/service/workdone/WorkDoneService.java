@@ -1,7 +1,7 @@
 package com.example.salonmanager.service.workdone;
 
-import com.example.projectschedulehaircutserver.exeption.LoginException;
-import com.example.projectschedulehaircutserver.request.AddWorkDoneInOrderRequest;
+import com.example.salonmanager.exeption.LoginException;
+import com.example.salonmanager.request.AddWorkDoneInOrderRequest;
 
 public interface WorkDoneService {
     String addWorkDoneInOrder(AddWorkDoneInOrderRequest request) throws LoginException;

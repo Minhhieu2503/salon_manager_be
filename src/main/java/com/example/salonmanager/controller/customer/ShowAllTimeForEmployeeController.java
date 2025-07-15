@@ -1,6 +1,6 @@
-package com.example.projectschedulehaircutserver.controller.customer;
+package com.example.salonmanager.controller.customer;
 
-import com.example.projectschedulehaircutserver.service.time.TimeService;
+import com.example.salonmanager.service.time.TimeService;
 import lombok.AllArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;

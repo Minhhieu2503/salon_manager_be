@@ -1,8 +1,8 @@
-package com.example.projectschedulehaircutserver.controller.employee;
+package com.example.salonmanager.controller.employee;
 
-import com.example.projectschedulehaircutserver.dto.OrderDTO;
-import com.example.projectschedulehaircutserver.request.AllOrderEmployeeAndDateRequest;
-import com.example.projectschedulehaircutserver.service.order.OrderService;
+import com.example.salonmanager.dto.OrderDTO;
+import com.example.salonmanager.request.AllOrderEmployeeAndDateRequest;
+import com.example.salonmanager.service.order.OrderService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
